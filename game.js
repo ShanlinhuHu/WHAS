@@ -93,7 +93,7 @@ function gameover() {
 
 function next(buttonID) {
 	save.eventBreak = false;
-	trigerEvent();
+	triggerEvent();
 }
 
 
@@ -104,7 +104,7 @@ function gotoLine(id) {
 	}
 }
 
-function trigerEvent() {
+function triggerEvent() {
 	while (!save.eventBreak && save.progress < Object.keys(EVENTS).length) {
 		save.eventBreak = EVENTS[save.progress].run();
 		if(!save.eventBreak) {
@@ -126,7 +126,7 @@ function Option(argu) {
 		for (var i = 1; i < argu.length; i++) {
 			argu[i].run();
 			save.eventBreak = false;
-			trigerEvent();
+			triggerEvent();
 		}
 	}
 }
